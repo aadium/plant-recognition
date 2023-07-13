@@ -5,7 +5,7 @@ import numpy as np
 plant_cascade = cv2.CascadeClassifier('plant_cascade.xml')
 
 # Initialize video capture object
-# liveFeed = cv2.VideoCapture("v.mp4")
+#liveFeed = cv2.VideoCapture("Videos/v.mp4")
 liveFeed = cv2.VideoCapture(0)
 
 # Define the size of the spray area
@@ -72,6 +72,7 @@ while True:
                 if cx > spray_radius and cx < frame.shape[1] - spray_radius and \
                 cy > spray_radius and cy < frame.shape[0] - spray_radius:
                     print("Nozzle on")# code to turn the nozzle on goes here
+                    print('Coordinates: [', cx, ',', cy, ']')
                 else:
                         print("Nozzle off")
                         # code to turn the nozzle off goes here
